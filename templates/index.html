@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northfield — Operations Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="frame">
+
+  <aside class="rail">
+    <div class="brand">
+      <div class="mark">N</div>
+      <div class="name">Northfield</div>
+      <div class="sub">Operations Desk</div>
+    </div>
+    <nav>
+      <a href="#kpis">Overview</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#tasks">Tasks <span class="n" id="taskCountTag">–</span></a>
+      <a href="#teams">Teams</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button">Switch to dark</button>
+    <div class="desk-note">
+      <strong>Standup note</strong>
+      Client renewal call moved to Thursday. Design needs sign-off on the Aster deck by Wed EOD.
+    </div>
+  </aside>
+
+  <main>
+    <div class="top">
+      <div>
+        <h1>Good morning — here's the week</h1>
+        <div class="date" id="todayDate">Loading…</div>
+      </div>
+      <div class="greeting" id="companyStats">—</div>
+    </div>
+
+    <section id="kpis">
+      <div class="section-head">
+        <h2>At a glance</h2>
+        <span class="tag">vs. last week</span>
+      </div>
+      <div class="kpi-row" id="kpiRow"></div>
+    </section>
+
+    <div class="cols">
+      <div>
+        <section id="calendar">
+          <div class="section-head">
+            <h2>This week</h2>
+            <span class="tag">Mon – Fri</span>
+          </div>
+          <div class="week" id="weekRow"></div>
+        </section>
+
+        <section id="tasks">
+          <div class="section-head">
+            <h2>Tasks this week</h2>
+            <span class="tag" id="taskProgress">Loading…</span>
+          </div>
+          <div class="tasklist" id="taskList"></div>
+          <form id="addTaskForm" class="add-task">
+            <input type="text" id="newTaskTitle" placeholder="Add a task…" required>
+            <select id="newTaskPriority">
+              <option value="high">High</option>
+              <option value="med" selected>Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <button type="submit">Add</button>
+          </form>
+        </section>
+      </div>
+
+      <div>
+        <section id="teams">
+          <div class="section-head">
+            <h2>Team status</h2>
+            <span class="tag">updated today</span>
+          </div>
+          <div class="team-list" id="teamList"></div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      Northfield Operations Desk · data served from a small Flask API · figures are illustrative placeholder data
+    </footer>
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

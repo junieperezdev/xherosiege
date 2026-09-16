@@ -1,5 +1,8 @@
 # Northfield — Operations Desk
 
+<img width="1089" height="927" alt="image" src="https://github.com/user-attachments/assets/082f2dc5-0582-4d0f-9161-45646a584ce0" />
+
+
 A small office dashboard: KPIs, weekly calendar, tasks, and team status.
 Python (Flask) backend serving a JSON API, plain HTML/CSS/JS frontend.
 
@@ -7,8 +10,10 @@ Python (Flask) backend serving a JSON API, plain HTML/CSS/JS frontend.
 
 ```bash
 cd northfield-dashboard
+sudo apt install python3-pip python3-venv
+pip3 install flask --break-
 pip install -r requirements.txt
-python app.py
+python3 app.py
 ```
 
 Then open **http://127.0.0.1:5000** in your browser.
